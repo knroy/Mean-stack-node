@@ -25,7 +25,7 @@ let saveFile = (file, callback) => {
 
 let requestListener = (req, res) => {
     res.writeHead(200, {
-        'Access-Control-Allow-Origin': 'http://localhost:63342',
+        'Access-Control-Allow-Origin': '*',
     })
     if (req.url === '/file-upload' && req.method === 'POST') {
         var form = new formidable.IncomingForm();
