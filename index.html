@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="fileupload" formenctype="multipart/form-data">
+<p id="fileUploadResponse"></p>
+<script type="text/javascript">
+    let fileInput = document.getElementById('fileupload');
+    fileInput.addEventListener('change', ($event) => {
+        let file = $event.target.files[0];
+        if (file) {
+            let formData = new FormData();
+            formData.append("FirstFile", file);
+
+            fetch('http://localhost:3000/file-upload', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                return response.json();
+            }).then((finalResponse) => {
+                let message = finalResponse.message;
+                let messageP = document.getElementById('fileUploadResponse');
+                messageP.innerText = message;
+            })
+
+        } else {
+            console.log('file removed');
+        }
+    })
+</script>
+
+</body>
+</html>

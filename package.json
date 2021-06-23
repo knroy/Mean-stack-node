@@ -16,6 +16,7 @@
   "author": "KN Roy",
   "license": "MIT",
   "dependencies": {
+    "formidable": "^1.2.2",
     "upper-case": "^2.0.2"
   }
 }
