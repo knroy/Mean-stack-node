@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "formidable": "^1.2.2",
+    "nodemailer": "^6.6.2",
     "upper-case": "^2.0.2"
   }
 }
