@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main": "nodemon main.js"
+    "main": "nodemon server.js"
   },
   "keywords": [
     "node",
@@ -16,6 +16,7 @@
   "author": "KN Roy",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "formidable": "^1.2.2",
     "nodemailer": "^6.6.2",
     "upper-case": "^2.0.2"

@@ -16,7 +16,17 @@ let requestListener = (req, res) => {
     res.writeHead(200, {
         'Access-Control-Allow-Origin': '*',
     })
-    if (req.url === '/file-upload' && req.method === 'POST') {
+    if (req.url === '/promise-a') {
+        setTimeout(() => {
+            res.write('testing localhost after 5000 ms');
+            res.end();
+        }, 5000);
+    } else if (req.url === '/promise-b') {
+        setTimeout(() => {
+            res.write('testing localhost, after 3000 ms');
+            res.end();
+        }, 3000);
+    } else if (req.url === '/file-upload' && req.method === 'POST') {
         fileUploader.upload(req, res);
     } else if (req.url === '/sendmail' && req.method === 'GET') {
         let mailDetails = {
