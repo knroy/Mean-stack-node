@@ -4,6 +4,15 @@ const app = express();
 
 const port = 4000;
 
+app.use('*', (req, res, next) => {
+    console.log('all * middleware passed');
+    next();
+})
+
+app.use('/we*', (req, res, next) => {
+    res.send('bad request from /we*');
+})
+
 app.get('/', (req, res) => {
     let mailDetails = {
         subject: 'Account registration',
